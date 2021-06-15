@@ -26,7 +26,21 @@
 
   </body>
   <script>
-    
+
+
+    function computerPlay() {
+      let numberSelection = Math.floor(Math.random() * 3);
+      if (numberSelection === 0) {
+        return "Rock";
+      } else if (numberSelection === 1) {
+        return "Paper";
+      } else if (numberSelection === 2) {
+        return "Scissors";
+      } else {
+        return "Error!";
+      };
+
+    };
     
 
 
