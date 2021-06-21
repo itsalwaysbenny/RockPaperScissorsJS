@@ -75,7 +75,7 @@
         return "Player Wins! Paper beats Rock";
       } else if (computerThrow === "rock" && playerThrow === "scissors") {
         computerScore++;
-        return "Computer Wins! Rock beats Sciissors";
+        return "Computer Wins! Rock beats Scissors";
       } else if (computerThrow === "scissors" && playerThrow === "paper") {
         computerScore++;
         return "Computer Wins! Scissors beats Paper";
@@ -93,7 +93,7 @@
 
 function game() {
   for (let i = 0; i < 5; i++) {
-    let playerSelection = 'Rock';
+    let playerSelection = prompt("Choose Rock, Paper or Scissors");
     let computerSelection = computerChoice();
     console.log(`Player chose ${playerSelection}`);
     console.log(`Computer chose ${computerSelection}`);
@@ -102,6 +102,13 @@ function game() {
     console.log(computerScore);
     console.log(drawnGames);
   };
+};
+
+//create a function to reset scores without refreshing
+function resetScores() {
+  playerScore = 0;
+  computerScore = 0;
+  drawnGames = 0;
 };
 
   </script>
