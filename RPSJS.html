@@ -27,7 +27,7 @@
   </body>
   <script>
 
-
+  // Create a function that will select an option at random
     function computerPlay() {
       let numberSelection = Math.floor(Math.random() * 3);
       if (numberSelection === 0) {
@@ -41,6 +41,39 @@
       };
 
     };
+
+//Make a function to take two parameters player choice and computer choice
+//This should then return the outcome of the game
+
+function playRockPaperScissors(playerSelection, computerSelection) {
+  let playerThrow = playerSelection.toLowerCase();
+  let computerThrow = computerSelection.toLowerCase();
+
+  if  (playerThrow != "rock" && playerThrow != "paper" && playerThrow != "scissors") {
+    return "Player must choose 'Rock', 'Paper' or 'Scissors";
+  } else if (computerThrow != "rock" && computerThrow != "paper" && computerThrow != "scissors") {
+    return "Computer must choose 'Rock', 'Paper' or 'Scissors";
+  } else {
+    if (playerThrow === computerThrow) {
+      return "Game is a draw";
+    } else if (playerThrow === "rock" && computerThrow === "scissors") {
+      return "Player Wins! Rock beats Scissors";
+    } else if (playerThrow === "scissors" && computerThrow === "paper") {
+      return "Player Wins! Scissors beats Paper";
+    } else if (playerThrow === "paper" && computerThrow === "rock") {
+      return "Player Wins! Paper beats Rock";
+    } else if (computerThrow === "rock" && playerThrow === "scissors") {
+      return "Computer Wins! Rock beats Scissors";
+    } else if (computerThrow === "scissors" && playerThrow === "paper") {
+      return "Computer Wins! Scissors beats Paper";
+    } else if (computerThrow === "paper" && playerThrow === "rock") {
+      return "Computer Wins! Paper beats Rock";
+    } else {
+      return "Something went wrong";
+    };
+  };
+
+};
     
 
 
