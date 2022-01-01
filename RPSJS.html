@@ -4,19 +4,17 @@
     <meta charset="utf-8"/>
     <title>Rock Paper Scissors Game</title>
     <style>
-      p {
-        color: purple;
-        margin: 0.5em 0;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
     </style>
     <link rel="stylesheet" href="../styles.css" />
   </head>
 
+
+
   <body>
+    <!--Create buttons for player choice-->
+    <button id="playerSelectRock">Rock</button>
+    <button id="playerSelectPaper">Paper</button>
+    <button id="playerSelectScissors">Scissors</button> 
 
     <section class="preview">
 
@@ -92,7 +90,8 @@
 // and reports overall winner after five
 
 function game() {
-  for (let i = 0; i < 5; i++) {
+  //removed number of plays
+  //for (let i = 0; i < 5; i++) {
     let playerSelection = prompt("Choose Rock, Paper or Scissors");
     let computerSelection = computerChoice();
     console.log(`Player chose ${playerSelection}`);
@@ -101,7 +100,7 @@ function game() {
     console.log(playerScore);
     console.log(computerScore);
     console.log(drawnGames);
-  };
+  //};
 };
 
 //create a function to reset scores without refreshing
@@ -110,6 +109,16 @@ function resetScores() {
   computerScore = 0;
   drawnGames = 0;
 };
+
+//create button for player selection
+const playerSelectRock = document.querySelector("#playerSelectRock");
+playerSelectRock.addEventListener("click", game);
+
+const playerSelectPaper = document.querySelector("#playerSelectPaper");
+playerSelectPaper.addEventListener("click", game);
+
+const playerSelectScissors = document.querySelector("#playerSelectScissors");
+playerSelectScissors.addEventListener("click", game);
 
   </script>
 
