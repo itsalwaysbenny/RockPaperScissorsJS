@@ -1,7 +1,10 @@
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
-const scores = document.getElementById("scores");
+const outcome = document.getElementById("outcome");
+const playerScoreOutput = document.getElementById("playerScoreOutput");
+const computerScoreOutput = document.getElementById("computerScoreOutput");
+const drawnGamesOutput = document.getElementById("drawnGamesOutput");
 
 
 let playerScore = 0;
@@ -23,6 +26,16 @@ let drawnGames = 0;
 
   };
 
+  function scoresOutput() {
+    playerScoreOutput.textContent = `Player Score is: ${playerScore}`;
+      computerScoreOutput.textContent = `Computer Score is: ${computerScore}`;
+      if (drawnGames === 1) {
+      drawnGamesOutput.textContent = `There is ${drawnGames} drawn games`;
+      } else {
+        drawnGamesOutput.textContent = `There are ${drawnGames} drawn games`;
+      }
+  };
+
 //Make a function to take two parameters player choice and computer choice
 //This should then return the outcome of the game
 //added a check to ensure only valid selections will run
@@ -40,27 +53,34 @@ function playRockPaperScissors(playerSelection, computerSelection) {
   } else {
     if (playerThrow === computerThrow) {
       drawnGames++;
-      scores.textContent = "Game is a draw";
+      outcome.textContent = "Game is a draw";
+      scoresOutput();
       } else if (playerThrow === "rock" && computerThrow === "scissors") {
       playerScore++;
-      scores.textContent = "Player Wins! Rock beats Scissors";
+      outcome.textContent = "Player Wins! Rock beats Scissors";
+      scoresOutput();
     } else if (playerThrow === "scissors" && computerThrow === "paper") {
       playerScore++;
-      scores.textContent = "Player Wins! Scissors beats Paper";
+      outcome.textContent = "Player Wins! Scissors beats Paper";
+      scoresOutput();
       } else if (playerThrow === "paper" && computerThrow === "rock") {
       playerScore++;
-      scores.textContent =  "Player Wins! Paper beats Rock";
+      outcome.textContent =  "Player Wins! Paper beats Rock";
+      scoresOutput();
     } else if (computerThrow === "rock" && playerThrow === "scissors") {
       computerScore++;
-      scores.textContent =  "Computer Wins! Rock beats Scissors";
+      outcome.textContent =  "Computer Wins! Rock beats Scissors";
+      scoresOutput();
     } else if (computerThrow === "scissors" && playerThrow === "paper") {
       computerScore++;
-      scores.textContent =  "Computer Wins! Scissors beats Paper";
+      outcome.textContent =  "Computer Wins! Scissors beats Paper";
+      scoresOutput();
     } else if (computerThrow === "paper" && playerThrow === "rock") {
       computerScore++;
-      scores.textContent =  "Computer Wins! Paper beats Rock";
+      outcome.textContent =  "Computer Wins! Paper beats Rock";
+      scoresOutput();
     } else {
-      scores.textContent =  "Something went wrong";
+      outcome.textContent =  "Something went wrong";
     };
   };
 };
