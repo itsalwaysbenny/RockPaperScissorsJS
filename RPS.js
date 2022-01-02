@@ -1,6 +1,7 @@
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
+const scores = document.getElementById("scores");
 
 
 let playerScore = 0;
@@ -64,21 +65,6 @@ function playRockPaperScissors(playerSelection, computerSelection) {
   };
 };
 
-//create a function to play five games of Rock Paper Scissors and count scores
-// and reports overall winner after five
-
-//removed game function until buttons work for making choices
-/*function game() {
-for (let i = 0; i < 5; i++) {
-  console.log(`Player chose ${playerSelection}`);
-  console.log(`Computer chose ${computerSelection}`);
-  console.log(playRockPaperScissors(playerSelection, computerSelection));
-  console.log(playerScore);
-  console.log(computerScore);
-  console.log(drawnGames);
-};
-};*/
-
 //create a function to reset scores without refreshing
 function resetScores() {
 playerScore = 0;
@@ -104,3 +90,18 @@ const playerChoice = e.target.id;
 console.log(e.target.id);
 console.log(playRockPaperScissors(playerChoice, computerChoice()));
 });
+
+//create a function to play five games of Rock Paper Scissors and count scores
+// and reports overall winner after five
+
+//removed game function until buttons work for making choices
+/*function game() {
+for (let i = 0; i < 5; i++) {
+  console.log(`Player chose ${playerSelection}`);
+  console.log(`Computer chose ${computerSelection}`);
+  console.log(playRockPaperScissors(playerSelection, computerSelection));
+  console.log(playerScore);
+  console.log(computerScore);
+  console.log(drawnGames);
+};
+};*/
