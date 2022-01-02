@@ -1,6 +1,8 @@
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
+const resetScores = document.getElementById("resetScores");
+
 const outcome = document.getElementById("outcome");
 const playerScoreOutput = document.getElementById("playerScoreOutput");
 const computerScoreOutput = document.getElementById("computerScoreOutput");
@@ -86,30 +88,31 @@ function playRockPaperScissors(playerSelection, computerSelection) {
 };
 
 //create a function to reset scores without refreshing
-function resetScores() {
+function resetScore() {
 playerScore = 0;
 computerScore = 0;
 drawnGames = 0;
+scoresOutput();
 };
 
 //create button for player selection
 rock.addEventListener("click", (e) => {
 const playerChoice = e.target.id;
-console.log(e.target.id);
-console.log(playRockPaperScissors(playerChoice, computerChoice()));
+playRockPaperScissors(playerChoice, computerChoice());
 });
 
 paper.addEventListener("click", (e) => {
 const playerChoice = e.target.id;
-console.log(e.target.id);
-console.log(playRockPaperScissors(playerChoice, computerChoice()));
+playRockPaperScissors(playerChoice, computerChoice());
 });
 
 scissors.addEventListener("click", (e) => {
 const playerChoice = e.target.id;
-console.log(e.target.id);
-console.log(playRockPaperScissors(playerChoice, computerChoice()));
+playRockPaperScissors(playerChoice, computerChoice());
 });
+
+resetScores.addEventListener("click", resetScore);
+
 
 //create a function to play five games of Rock Paper Scissors and count scores
 // and reports overall winner after five
