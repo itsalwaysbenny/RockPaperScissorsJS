@@ -40,27 +40,27 @@ function playRockPaperScissors(playerSelection, computerSelection) {
   } else {
     if (playerThrow === computerThrow) {
       drawnGames++;
-      return "Game is a draw";
+      scores.textContent = "Game is a draw";
       } else if (playerThrow === "rock" && computerThrow === "scissors") {
       playerScore++;
-      return "Player Wins! Rock beats Scissors";
+      scores.textContent = "Player Wins! Rock beats Scissors";
     } else if (playerThrow === "scissors" && computerThrow === "paper") {
       playerScore++;
-      return "Player Wins! Scissors beats Paper";
+      scores.textContent = "Player Wins! Scissors beats Paper";
       } else if (playerThrow === "paper" && computerThrow === "rock") {
       playerScore++;
-      return "Player Wins! Paper beats Rock";
+      scores.textContent =  "Player Wins! Paper beats Rock";
     } else if (computerThrow === "rock" && playerThrow === "scissors") {
       computerScore++;
-      return "Computer Wins! Rock beats Scissors";
+      scores.textContent =  "Computer Wins! Rock beats Scissors";
     } else if (computerThrow === "scissors" && playerThrow === "paper") {
       computerScore++;
-      return "Computer Wins! Scissors beats Paper";
+      scores.textContent =  "Computer Wins! Scissors beats Paper";
     } else if (computerThrow === "paper" && playerThrow === "rock") {
       computerScore++;
-      return "Computer Wins! Paper beats Rock";
+      scores.textContent =  "Computer Wins! Paper beats Rock";
     } else {
-      return "Something went wrong";
+      scores.textContent =  "Something went wrong";
     };
   };
 };
