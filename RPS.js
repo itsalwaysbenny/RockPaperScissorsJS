@@ -4,6 +4,7 @@ const scissors = document.getElementById("scissors");
 const resetScores = document.getElementById("resetScores");
 
 const outcome = document.getElementById("outcome");
+const winnerOutput = document.getElementById("winnerOutput");
 const playerScoreOutput = document.getElementById("playerScoreOutput");
 const computerScoreOutput = document.getElementById("computerScoreOutput");
 const drawnGamesOutput = document.getElementById("drawnGamesOutput");
@@ -57,30 +58,37 @@ function playRockPaperScissors(playerSelection, computerSelection) {
       drawnGames++;
       outcome.textContent = "Game is a draw";
       scoresOutput();
+      winnerAnnounce ()
       } else if (playerThrow === "rock" && computerThrow === "scissors") {
       playerScore++;
       outcome.textContent = "Player Wins! Rock beats Scissors";
       scoresOutput();
+      winnerAnnounce ()
     } else if (playerThrow === "scissors" && computerThrow === "paper") {
       playerScore++;
       outcome.textContent = "Player Wins! Scissors beats Paper";
       scoresOutput();
+      winnerAnnounce ()
       } else if (playerThrow === "paper" && computerThrow === "rock") {
       playerScore++;
       outcome.textContent =  "Player Wins! Paper beats Rock";
       scoresOutput();
+      winnerAnnounce ()
     } else if (computerThrow === "rock" && playerThrow === "scissors") {
       computerScore++;
       outcome.textContent =  "Computer Wins! Rock beats Scissors";
       scoresOutput();
+      winnerAnnounce ()
     } else if (computerThrow === "scissors" && playerThrow === "paper") {
       computerScore++;
       outcome.textContent =  "Computer Wins! Scissors beats Paper";
       scoresOutput();
+      winnerAnnounce ()
     } else if (computerThrow === "paper" && playerThrow === "rock") {
       computerScore++;
       outcome.textContent =  "Computer Wins! Paper beats Rock";
       scoresOutput();
+      winnerAnnounce ()
     } else {
       outcome.textContent =  "Something went wrong";
     };
@@ -95,7 +103,19 @@ drawnGames = 0;
 scoresOutput();
 };
 
-//create button for player selection
+//create a function to announce a winner
+function winnerAnnounce () {
+  if (playerScore === 5) {
+    winnerOutput.textContent = "You are the winner!!!"
+    resetScore();
+  };
+  if (computerScore === 5) {
+    winnerOutput.textContent = "Computer Wins!!!"
+    resetScore();
+  };
+};
+
+//create buttons for player selection
 rock.addEventListener("click", (e) => {
 const playerChoice = e.target.id;
 playRockPaperScissors(playerChoice, computerChoice());
@@ -111,6 +131,7 @@ const playerChoice = e.target.id;
 playRockPaperScissors(playerChoice, computerChoice());
 });
 
+//button to reset scores back to 0
 resetScores.addEventListener("click", resetScore);
 
 
